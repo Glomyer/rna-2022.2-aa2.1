@@ -14,10 +14,10 @@ ebgcosta@uea.edu.br
 <br>
 
 # Equipe
-- ### Anna Alicia Vasconcelos Milani
-- ### Luiz Carlos Glomyer Pereira Gomes Junior
-- ### Luiz Pedro Gadelha da Silva
-- ### Santiago Augusto De Souza Monteiro
+- ### Anna Alicia Vasconcelos Milani - 1915310030
+- ### Luiz Carlos Glomyer Pereira Gomes Junior - 2015310021
+- ### Luiz Pedro Gadelha da Silva - 1615080153
+- ### Santiago Augusto De Souza Monteiro - 1915080043
 <br>
 
 ## 1. Apresentação

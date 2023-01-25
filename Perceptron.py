@@ -163,10 +163,6 @@ class Perceptron:
           localFits += 1
 
       print(f"---- Fim da época: {e + 1} com  {localFits} ajustes ----")
-      # print(f"Vetor de pesos: {weightsVector}")
-      # print(f"Número de ajustes feitos no vetor de pesos na época: {localFits}")
-      # print(f"Número de ajustes feitos no vetor de pesos até o momento: {numberOfFitsInTheWeightVector}")
-      # print()
     
     print("O número total de ajustes no vetor de pesos: ", numberOfFitsInTheWeightVector)
     print("vetor de pesos final: ", weightsVector)

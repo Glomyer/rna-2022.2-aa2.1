@@ -4,12 +4,12 @@ from Perceptron import Perceptron
 
 class Perceptron2(Perceptron):
     
-    def __init__(self, data, dataLength, learningRate = 0.1, uniformBound = 0.5):
+    def __init__(self, data, dataLength, learningRate = 0.1, weightInterval = (-0.5, 0.5)):
         self.data = data
         self.dataLength = dataLength
         self.epoch = 0
         self.learningRate = learningRate
-        self.uniformBound = uniformBound
+        self.wIntervalLowerBound, self.wIntervalUpperBound = weightInterval
         self.numberOfFitsInTheWeightVector = 0
 
     def getNextWeightsVector(self, previousWeightsVector, error, inputAttributesVector):
@@ -18,7 +18,7 @@ class Perceptron2(Perceptron):
     def getWeightsVector(self):
         weightsVector = np.array([])
         for i in range(3):
-            randomNumber = random.uniform(-self.uniformBound, self.uniformBound)
+            randomNumber = random.uniform(self.wIntervalLowerBound, self.wIntervalUpperBound)
             weightsVector = np.append(weightsVector, randomNumber)
         return (weightsVector)
 

@@ -137,6 +137,9 @@ class Perceptron:
     print("vetor de pesos: ", weightsVector)
 
     for e in range(epoch):
+
+      print(f"---- Época: {e + 1} ----")
+
       localFits = 0
 
       for i in range(len(inputVectorGroup)):
@@ -154,14 +157,30 @@ class Perceptron:
         error = self.getError(realOutput, outputDeducted)
 
         if (error):
+          print(f"Ajuste: {weightsVector}")
           weightsVector = self.getNextWeightsVector(weightsVector, error, inputVector)
           numberOfFitsInTheWeightVector += 1
           localFits += 1
 
-      print(f"Época: {e + 1} ")
-      print(f"Número de ajustes feitos no vetor de pesos na época: {localFits}")
-      print(f"Número de ajustes feitos no vetor de pesos até o momento: {numberOfFitsInTheWeightVector}")
-      print()
+      print(f"---- Fim da época: {e + 1} com  {localFits} ajustes ----")
+      # print(f"Vetor de pesos: {weightsVector}")
+      # print(f"Número de ajustes feitos no vetor de pesos na época: {localFits}")
+      # print(f"Número de ajustes feitos no vetor de pesos até o momento: {numberOfFitsInTheWeightVector}")
+      # print()
     
     print("O número total de ajustes no vetor de pesos: ", numberOfFitsInTheWeightVector)
     print("vetor de pesos final: ", weightsVector)
+
+    return (weightsVector)
+    
+  def getPredictedVector(self, inputVectorGroup, weightsVector):
+    deducedOutputVector = np.array([])
+
+    for i in range(len(inputVectorGroup)):
+      inputVector = inputVectorGroup[i]
+
+      weightedSum = self.getWeightedSum(inputVector, weightsVector)
+      outputDeducted = self.step(weightedSum)
+      
+      deducedOutputVector = np.insert(deducedOutputVector, i, outputDeducted)
+    return (deducedOutputVector)
